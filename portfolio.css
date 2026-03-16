@@ -1,0 +1,273 @@
+.portfolio-main {
+  min-height: 100vh;
+  background: var(--cream);
+}
+
+.portfolio-shell {
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  gap: 108px;
+  padding: 58px 0 96px;
+  align-items: start;
+}
+
+.portfolio-rail {
+  position: sticky;
+  top: 28px;
+  display: grid;
+  align-content: start;
+}
+
+.portfolio-brand {
+  width: 100%;
+  padding: 8px 0 10px;
+  border: 0;
+  border-bottom: 3px solid #111;
+  background: transparent;
+  text-align: left;
+  font-family: "Satoshi", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 23px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #111;
+  cursor: pointer;
+  transition: color 160ms ease, padding-left 160ms ease;
+}
+
+.portfolio-brand.is-active {
+  color: var(--red);
+}
+
+.portfolio-brand:hover {
+  padding-left: 6px;
+}
+
+.portfolio-stage {
+  min-width: 0;
+}
+
+.portfolio-panel {
+  display: none;
+}
+
+.portfolio-panel.is-active {
+  display: block;
+}
+
+.portfolio-panel-head {
+  margin-bottom: 26px;
+}
+
+.portfolio-panel-head h1 {
+  margin: 0;
+  font-family: "Satoshi", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: var(--headline-size);
+  line-height: 1.08;
+  font-weight: 800;
+  color: #111;
+}
+
+.portfolio-panel-head p {
+  margin: 10px 0 0;
+  max-width: 760px;
+  font-size: 22px;
+  line-height: 1.35;
+  color: rgba(17, 17, 17, 0.82);
+}
+
+.portfolio-group + .portfolio-group {
+  margin-top: 44px;
+}
+
+.portfolio-group h2 {
+  margin: 0 0 14px;
+  font-family: "Satoshi", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 26px;
+  line-height: 1.05;
+  font-weight: 800;
+  color: #262222;
+}
+
+.portfolio-media-grid,
+.portfolio-placeholder-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.portfolio-media-grid-reels {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.portfolio-media-grid-posts {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.portfolio-media-grid-wide {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.portfolio-media-card,
+.portfolio-placeholder-card {
+  overflow: hidden;
+  background: #cfcfcf;
+}
+
+.portfolio-link-card {
+  min-height: 520px;
+  padding: 28px;
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  background: #111;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.portfolio-link-card span,
+.portfolio-link-card em {
+  font-size: 14px;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portfolio-link-card strong {
+  font-family: "BehindTheNineties", Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.portfolio-media-card {
+  border-radius: 2px;
+}
+
+.portfolio-media-card iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+.portfolio-media-card.is-instagram {
+  background: #fff;
+}
+
+.portfolio-media-card.is-instagram iframe {
+  width: 100%;
+  border: 0;
+  transform: none;
+}
+
+.portfolio-media-grid-reels .portfolio-media-card {
+  aspect-ratio: 0.7;
+}
+
+.portfolio-media-card.is-instagram-reel iframe {
+  height: 100%;
+  min-height: 760px;
+}
+
+.portfolio-media-grid-posts .portfolio-media-card {
+  aspect-ratio: 0.84;
+}
+
+.portfolio-media-card.is-instagram-post iframe {
+  height: 100%;
+  min-height: 640px;
+}
+
+.portfolio-media-card-video {
+  aspect-ratio: 1.55;
+}
+
+.portfolio-media-card-video iframe,
+.portfolio-media-card-document iframe {
+  height: 100%;
+  min-height: 300px;
+}
+
+.portfolio-media-card-document {
+  grid-column: 1 / -1;
+  min-height: 440px;
+}
+
+.portfolio-placeholder-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.portfolio-placeholder-card {
+  aspect-ratio: 0.86;
+}
+
+@media (max-width: 1200px) {
+  .portfolio-shell {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 48px;
+    padding: 38px 0 70px;
+  }
+
+  .portfolio-brand {
+    font-size: 19px;
+  }
+
+  .portfolio-panel-head h1 {
+    font-size: 46px;
+  }
+
+  .portfolio-panel-head p {
+    font-size: 18px;
+  }
+
+  .portfolio-media-grid-reels {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .portfolio-media-grid-wide,
+  .portfolio-placeholder-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .portfolio-shell {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 20px 0 36px;
+  }
+
+  .portfolio-rail {
+    position: static;
+  }
+
+  .portfolio-brand {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+
+  .portfolio-panel-head h1 {
+    font-size: var(--headline-size-mobile);
+  }
+
+  .portfolio-panel-head p {
+    font-size: 17px;
+  }
+
+  .portfolio-group h2 {
+    font-size: 22px;
+  }
+
+  .portfolio-media-grid-reels,
+  .portfolio-media-grid-posts,
+  .portfolio-media-grid-wide,
+  .portfolio-placeholder-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-media-grid-reels .portfolio-media-card iframe {
+    height: 620px;
+  }
+
+  .portfolio-media-card-document {
+    min-height: 340px;
+  }
+}

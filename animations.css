@@ -1,0 +1,64 @@
+:root {
+  --anim-duration: 520ms;
+  --anim-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --anim-distance-subtle: 0px;
+  --anim-distance-bold: 0px;
+}
+
+.anim-init {
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity, filter;
+  transition-property: transform, opacity, filter;
+  transition-duration: var(--anim-duration);
+  transition-timing-function: var(--anim-ease);
+  transition-delay: var(--delay, 0ms);
+}
+
+.anim-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.anim-fade-up {
+  transform: translateY(var(--anim-distance-subtle));
+}
+
+.anim-fade-left {
+  transform: translateX(var(--anim-distance-bold));
+}
+
+.anim-scale-in {
+  transform: scale(0.96);
+  filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+}
+
+.anim-scale-in.anim-in {
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.45));
+}
+
+.anim-rotate-in {
+  transform: rotate(10deg) scale(0.96);
+  transform-origin: center center;
+}
+
+.skills-grid img.anim-init,
+.clients-grid img.anim-init {
+  transform: translateY(8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-init,
+  .anim-in,
+  .anim-fade-up,
+  .anim-fade-left,
+  .anim-scale-in,
+  .anim-rotate-in {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
